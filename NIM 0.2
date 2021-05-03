@@ -1,3 +1,5 @@
+import random
+
 def main():
    
     num1 = 20
@@ -6,10 +8,12 @@ def main():
     while num1 > 0:
         print("There are " + str(num1)+" stones left")
         if player%2 == 0:
-            if num1%7 in (0,2,4,6):
+            if num1%3 == 0:
+                num2 = 2
+            elif num1%3 == 2:
                 num2 = 1
             else:
-                num2 = 2
+                num2 = random.randomint(1,2)
             if num1 < num2:
                 num2 = 1
             print("Comp pick "+ str(num2)+" stones")
@@ -29,8 +33,3 @@ def main():
         print("Computer wins!")
     else:
         print("You rock!")
-        
-
-
-if __name__ == '__main__':
-    main()
