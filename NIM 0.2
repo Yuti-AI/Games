@@ -1,0 +1,36 @@
+def main():
+   
+    num1 = 20
+    player = 2
+    
+    while num1 > 0:
+        print("There are " + str(num1)+" stones left")
+        if player%2 == 0:
+            if num1%7 in (0,2,4,6):
+                num2 = 1
+            else:
+                num2 = 2
+            if num1 < num2:
+                num2 = 1
+            print("Comp pick "+ str(num2)+" stones")
+        else:
+            num2 = int(input("Would you like to remove 1 or 2 stones? "))
+            while num2 !=1 and num2!=2:
+                num2 = int(input("Please enter 1 or 2: "))
+            while num1 < num2:
+                print("You only have one stone left.")
+                num2 = int(input("Please pick one: "))
+        print("")
+        num1 = num1-num2
+        player +=1
+        #print(int(player))
+    
+    if player%2 == 0:
+        print("Computer wins!")
+    else:
+        print("You rock!")
+        
+
+
+if __name__ == '__main__':
+    main()
